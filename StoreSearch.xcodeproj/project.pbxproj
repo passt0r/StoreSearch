@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		599F37E51F0AB987000D2605 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599F37E41F0AB987000D2605 /* SearchResult.swift */; };
 		59DA53161F0AA3E5006F7CAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA53151F0AA3E5006F7CAD /* AppDelegate.swift */; };
 		59DA53181F0AA3E5006F7CAD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA53171F0AA3E5006F7CAD /* SearchViewController.swift */; };
 		59DA531B1F0AA3E5006F7CAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59DA53191F0AA3E5006F7CAD /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		599F37E41F0AB987000D2605 /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		59DA53121F0AA3E5006F7CAD /* StoreSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59DA53151F0AA3E5006F7CAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59DA53171F0AA3E5006F7CAD /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			children = (
 				59DA53151F0AA3E5006F7CAD /* AppDelegate.swift */,
 				59DA53171F0AA3E5006F7CAD /* SearchViewController.swift */,
+				599F37E41F0AB987000D2605 /* SearchResult.swift */,
 				59DA53191F0AA3E5006F7CAD /* Main.storyboard */,
 				59DA531C1F0AA3E5006F7CAD /* Assets.xcassets */,
 				59DA531E1F0AA3E5006F7CAD /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59DA53181F0AA3E5006F7CAD /* SearchViewController.swift in Sources */,
+				599F37E51F0AB987000D2605 /* SearchResult.swift in Sources */,
 				59DA53161F0AA3E5006F7CAD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +306,7 @@
 				59DA53261F0AA3E5006F7CAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
