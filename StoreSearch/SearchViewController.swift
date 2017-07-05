@@ -17,6 +17,8 @@ class SearchViewController: UIViewController {
     var hasSearched = false
     var isLoading = false
     
+    var dataTask: URLSessionDataTask?
+    
     struct TableViewCellIdentifiers {
         static let searchResultCell = "SearchResultCell"
         static let nothingFoundCell = "NothingFoundCell"
@@ -223,6 +225,8 @@ class SearchViewController: UIViewController {
 
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        dataTask?.cancel()
+        
         if !searchBar.text!.isEmpty {
             searchBar.resignFirstResponder()
             
@@ -236,9 +240,9 @@ extension SearchViewController: UISearchBarDelegate {
             
             let session = URLSession.shared
             
-            let dataTask = session.dataTask(with: url) {data, response, error in
-                if let error = error {
-                    print("Falture!: '\(error)'")
+            dataTask = session.dataTask(with: url) {data, response, error in
+                if let error = error as? NSError, error.code == -999 {
+                    return
                 } else if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
                     if let data = data, let jsonDictionary = self.parse(json: data) {
                         self.searchResults = self.parse(dictionary: jsonDictionary)
@@ -261,7 +265,7 @@ extension SearchViewController: UISearchBarDelegate {
                     self.showNetworkError()
                 }
             }
-            dataTask.resume()
+            dataTask?.resume()
         }
     }
     
