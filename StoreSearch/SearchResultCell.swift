@@ -68,7 +68,6 @@ class SearchResultCell: UITableViewCell {
         
         downloadTask?.cancel()
         downloadTask = nil
-        print("***Cancel downloading image")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
