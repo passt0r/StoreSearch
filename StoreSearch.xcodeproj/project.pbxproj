@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5975C93F1F0D56300006B5F9 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5975C93E1F0D56300006B5F9 /* LoadingCell.xib */; };
 		5975C96D1F0DA13B0006B5F9 /* UIImageView+DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5975C96C1F0DA13B0006B5F9 /* UIImageView+DownloadImage.swift */; };
+		5975C96F1F0E535A0006B5F9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5975C96E1F0E535A0006B5F9 /* DetailViewController.swift */; };
+		5975C9711F0E58DC0006B5F9 /* DimmingPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5975C9701F0E58DC0006B5F9 /* DimmingPresentationController.swift */; };
 		599F37E51F0AB987000D2605 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599F37E41F0AB987000D2605 /* SearchResult.swift */; };
 		599F37E71F0AD829000D2605 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 599F37E61F0AD829000D2605 /* SearchResultCell.xib */; };
 		599F37E91F0ADE9F000D2605 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599F37E81F0ADE9F000D2605 /* SearchResultCell.swift */; };
@@ -22,10 +24,12 @@
 /* Begin PBXFileReference section */
 		5975C93E1F0D56300006B5F9 /* LoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		5975C96C1F0DA13B0006B5F9 /* UIImageView+DownloadImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+DownloadImage.swift"; sourceTree = "<group>"; };
+		5975C96E1F0E535A0006B5F9 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		5975C9701F0E58DC0006B5F9 /* DimmingPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimmingPresentationController.swift; sourceTree = "<group>"; };
 		599F37E41F0AB987000D2605 /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		599F37E61F0AD829000D2605 /* SearchResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
 		599F37E81F0ADE9F000D2605 /* SearchResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
-		599F37EC1F0AE3B5000D2605 /* NothingFoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NothingFoundCell.xib; path = ../NothingFoundCell.xib; sourceTree = "<group>"; };
+		599F37EC1F0AE3B5000D2605 /* NothingFoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
 		59DA53121F0AA3E5006F7CAD /* StoreSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59DA53151F0AA3E5006F7CAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59DA53171F0AA3E5006F7CAD /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -64,17 +68,19 @@
 		59DA53141F0AA3E5006F7CAD /* StoreSearch */ = {
 			isa = PBXGroup;
 			children = (
+				59DA53211F0AA3E5006F7CAD /* Info.plist */,
 				59DA53151F0AA3E5006F7CAD /* AppDelegate.swift */,
-				59DA53171F0AA3E5006F7CAD /* SearchViewController.swift */,
+				5975C96E1F0E535A0006B5F9 /* DetailViewController.swift */,
+				5975C9701F0E58DC0006B5F9 /* DimmingPresentationController.swift */,
 				599F37E41F0AB987000D2605 /* SearchResult.swift */,
-				59DA53191F0AA3E5006F7CAD /* Main.storyboard */,
-				59DA531C1F0AA3E5006F7CAD /* Assets.xcassets */,
 				599F37E81F0ADE9F000D2605 /* SearchResultCell.swift */,
-				599F37E61F0AD829000D2605 /* SearchResultCell.xib */,
+				59DA53171F0AA3E5006F7CAD /* SearchViewController.swift */,
+				5975C96C1F0DA13B0006B5F9 /* UIImageView+DownloadImage.swift */,
+				59DA531C1F0AA3E5006F7CAD /* Assets.xcassets */,
 				5975C93E1F0D56300006B5F9 /* LoadingCell.xib */,
 				599F37EC1F0AE3B5000D2605 /* NothingFoundCell.xib */,
-				5975C96C1F0DA13B0006B5F9 /* UIImageView+DownloadImage.swift */,
-				59DA53211F0AA3E5006F7CAD /* Info.plist */,
+				599F37E61F0AD829000D2605 /* SearchResultCell.xib */,
+				59DA53191F0AA3E5006F7CAD /* Main.storyboard */,
 			);
 			path = StoreSearch;
 			sourceTree = "<group>";
@@ -155,8 +161,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				59DA53181F0AA3E5006F7CAD /* SearchViewController.swift in Sources */,
+				5975C9711F0E58DC0006B5F9 /* DimmingPresentationController.swift in Sources */,
 				599F37E51F0AB987000D2605 /* SearchResult.swift in Sources */,
 				599F37E91F0ADE9F000D2605 /* SearchResultCell.swift in Sources */,
+				5975C96F1F0E535A0006B5F9 /* DetailViewController.swift in Sources */,
 				59DA53161F0AA3E5006F7CAD /* AppDelegate.swift in Sources */,
 				5975C96D1F0DA13B0006B5F9 /* UIImageView+DownloadImage.swift in Sources */,
 			);
