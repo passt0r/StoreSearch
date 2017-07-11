@@ -26,6 +26,8 @@ class SearchViewController: UIViewController {
         static let loadingCell = "LoadingCell"
     }
     
+    var notificationObserver: Any?
+    
     @IBAction func segmentChanged(_ sender: UISegmentedControl) {
        performSearch()
     }
@@ -227,6 +229,12 @@ class SearchViewController: UIViewController {
         
         present(alert, animated: true, completion: nil)
     }
+    
+    deinit {
+        if let notificationObserver = notificationObserver {
+            NotificationCenter.default.removeObserver(notificationObserver)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -239,6 +247,10 @@ class SearchViewController: UIViewController {
         cellNib = UINib(nibName: TableViewCellIdentifiers.loadingCell, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: TableViewCellIdentifiers.loadingCell)
         tableView.rowHeight = 80
+        
+        tableView.estimatedRowHeight = 44
+        tableView.rowHeight = UITableViewAutomaticDimension
+        addFontChangeObserver()
         
         searchBar.becomeFirstResponder()
         
@@ -320,4 +332,13 @@ extension SearchViewController: UITableViewDelegate {
         }
     }
     
+}
+
+extension SearchViewController {
+    func addFontChangeObserver() {
+        notificationObserver = NotificationCenter.default.addObserver(self, selector: #selector(changeFont), name: Notification.Name.UIContentSizeCategoryDidChange, object: nil)
+    }
+    func changeFont() {
+        tableView.reloadData()
+    }
 }
