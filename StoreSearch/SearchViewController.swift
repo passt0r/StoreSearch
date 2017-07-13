@@ -46,7 +46,7 @@ class SearchViewController: UIViewController {
         }
         
         let escapedSearchText = searchText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        let urlString = String(format: "https://itunes.apple.com/search?term=%@&limit=200&entity=%@", escapedSearchText, entityName)
+        let urlString = String(format: "https://itunes.apple.com/search?term=%@&limit=100&entity=%@", escapedSearchText, entityName)
         let url = URL(string: urlString)
         return url!
     }
@@ -360,6 +360,7 @@ extension SearchViewController {
         landscapeViewController = storyboard!.instantiateViewController(withIdentifier: "LandscapeViewController") as? LandscapeViewController
         
         if let controller = landscapeViewController {
+            controller.searchResults = searchResults //add this before call controller.view if you need to do some preparations in viewDidLoad() based at this parameter, because it's initiates of loading view and call viewDidLoad() after that
             controller.view.frame = view.bounds
             controller.view.alpha = 0
             
