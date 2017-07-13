@@ -13,7 +13,7 @@ class LandscapeViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControll: UIPageControl!
     
-    var searchResults = [SearchResult]()
+    var search: Search!
     private var firstTime = true
     
     private var downloadTasks = [URLSessionDownloadTask]()
@@ -99,9 +99,10 @@ class LandscapeViewController: UIViewController {
             let downloadTask = URLSession.shared.downloadTask(with: url) {
                 [weak button] url, response, error in
                 if error == nil, let url = url, let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
+                    let resizedImage = image.resizedImage(withBounds: CGSize(width: 60, height: 60))
                     DispatchQueue.main.async {
                         if let button = button {
-                            button.setImage(image, for: .normal)
+                            button.setImage(resizedImage, for: .normal)
                         }
                     }
                 }
@@ -146,7 +147,7 @@ class LandscapeViewController: UIViewController {
                                     height: pageControll.frame.size.height)
         if firstTime {
             firstTime = false
-            tileButtons(searchResults)
+            tileButtons(search.searchResults)
         }
     }
 
