@@ -16,6 +16,8 @@ class LandscapeViewController: UIViewController {
     var searchResults = [SearchResult]()
     private var firstTime = true
     
+    private var downloadTasks = [URLSessionDownloadTask]()
+    
     //MARK: Methods
     @IBAction func pageChanged(_ sender: UIPageControl) {
         UIView.animate(withDuration: 0.5, delay: 0, options: [.curveEaseInOut], animations: {
@@ -61,10 +63,10 @@ class LandscapeViewController: UIViewController {
         var row = 0
         var column = 0
         var x = marginX
-        for(index, searchResult) in searchResults.enumerated() {
-            let button = UIButton(type: .system)
-            button.backgroundColor = UIColor.white
-            button.setTitle("\(index)", for: .normal)
+        for(_, searchResult) in searchResults.enumerated() {
+            let button = UIButton(type: .custom)
+            button.setBackgroundImage(UIImage(named: "LandscapeButton"), for: .normal)
+            downloadImage(for: searchResult, andPlaceOn: button)
             
             button.frame = CGRect(x: x+paddingHorz,
                                   y: marginY+CGFloat(row)*itemHeight + paddingVert,
@@ -92,7 +94,28 @@ class LandscapeViewController: UIViewController {
         pageControll.currentPage = 0
     }
     
+    private func downloadImage(for searchResult: SearchResult, andPlaceOn button: UIButton) {
+        if let url = URL(string: searchResult.artworkSmallURL) {
+            let downloadTask = URLSession.shared.downloadTask(with: url) {
+                [weak button] url, response, error in
+                if error == nil, let url = url, let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        if let button = button {
+                            button.setImage(image, for: .normal)
+                        }
+                    }
+                }
+            }
+            downloadTask.resume()
+            downloadTasks.append(downloadTask)
+        }
+    }
+    
     deinit {
+        for downloadTask in downloadTasks {
+            downloadTask.cancel()
+        }
+        downloadTasks.removeAll()
         print("***Deinit\(self)")
     }
 
