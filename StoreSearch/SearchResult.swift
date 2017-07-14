@@ -19,6 +19,19 @@ class SearchResult {
     var price = 0.0
     var genre = ""
     
+    private let displayNamesForKind = [
+    "album": NSLocalizedString("Album", comment: "Localized kind: Album"),
+    "audiobook": NSLocalizedString("Audio Book", comment: "Localized kind: Audio Book"),
+    "book": NSLocalizedString("Book", comment: "Localized kind: Book"),
+    "ebook": NSLocalizedString("E-book", comment: "Localized kind: E-book"),
+    "feature-movie": NSLocalizedString("Movie", comment: "Localized kind: Movie"),
+    "music-video": NSLocalizedString("Music Video", comment: "Localized kind: Music Video"),
+    "podcast": NSLocalizedString("Podcast", comment: "Localized kind: Podcast"),
+    "software": NSLocalizedString("App", comment: "Localized kind: App"),
+    "song": NSLocalizedString("Song", comment: "Localized kind: Song"),
+    "tv-episode": NSLocalizedString("TV Episode", comment: "Localized kind: TV Episode")
+    ]
+    
     static func < (left: SearchResult, right: SearchResult) -> Bool {
         return left.name.localizedStandardCompare(right.name) == .orderedAscending
     }
@@ -27,28 +40,7 @@ class SearchResult {
     }
     
     func kindForDisplay() -> String {
-        switch kind {
-        case "album":
-            return "Album"
-        case "audiobook":
-            return "Audio Book"
-        case "ebook":
-            return "E-book"
-        case "feature-movie":
-            return "Movie"
-        case "music-video":
-            return "Music Video"
-        case "podcast":
-            return "Podcast"
-        case "software":
-            return "App"
-        case "song":
-            return "Song"
-        case "tv-episode":
-            return "TV Episode"
-        default:
-            return kind
-        }
+        return displayNamesForKind[kind] ?? kind
     }
 
 }

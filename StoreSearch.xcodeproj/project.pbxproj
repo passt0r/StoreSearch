@@ -22,6 +22,9 @@
 		59CEAB001F19066800667231 /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59CEAB021F19066800667231 /* NothingFoundCell.xib */; };
 		59CEAB051F190B0100667231 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59CEAB071F190B0100667231 /* LoadingCell.xib */; };
 		59CEAB101F19122700667231 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59CEAB121F19122700667231 /* SearchResultCell.xib */; };
+		59CEAB151F19175F00667231 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 59CEAB131F19175F00667231 /* Localizable.strings */; };
+		59CEAB201F19227700667231 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 59CEAB1F1F19227700667231 /* Info.plist */; };
+		59CEAB231F19236600667231 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 59CEAB251F19236600667231 /* InfoPlist.strings */; };
 		59DA53161F0AA3E5006F7CAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA53151F0AA3E5006F7CAD /* AppDelegate.swift */; };
 		59DA53181F0AA3E5006F7CAD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA53171F0AA3E5006F7CAD /* SearchViewController.swift */; };
 		59DA531B1F0AA3E5006F7CAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59DA53191F0AA3E5006F7CAD /* Main.storyboard */; };
@@ -50,12 +53,18 @@
 		59CEAB0D1F190E7D00667231 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Main.strings; sourceTree = "<group>"; };
 		59CEAB0F1F190E7F00667231 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Main.strings; sourceTree = "<group>"; };
 		59CEAB111F19122700667231 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SearchResultCell.xib; sourceTree = "<group>"; };
+		59CEAB141F19175F00667231 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		59CEAB161F19186100667231 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		59CEAB171F19186200667231 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		59CEAB1F1F19227700667231 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59CEAB241F19236600667231 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		59CEAB261F19236800667231 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		59CEAB271F19236900667231 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		59DA53121F0AA3E5006F7CAD /* StoreSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59DA53151F0AA3E5006F7CAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59DA53171F0AA3E5006F7CAD /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		59DA531A1F0AA3E5006F7CAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		59DA531C1F0AA3E5006F7CAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		59DA53211F0AA3E5006F7CAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +97,9 @@
 		59DA53141F0AA3E5006F7CAD /* StoreSearch */ = {
 			isa = PBXGroup;
 			children = (
-				59DA53211F0AA3E5006F7CAD /* Info.plist */,
+				59CEAB1F1F19227700667231 /* Info.plist */,
+				59CEAB131F19175F00667231 /* Localizable.strings */,
+				59CEAB251F19236600667231 /* InfoPlist.strings */,
 				59DA53151F0AA3E5006F7CAD /* AppDelegate.swift */,
 				597576731F1560B400B12709 /* GradientView.swift */,
 				597576751F156EE500B12709 /* BounceAnimationController.swift */,
@@ -174,7 +185,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59CEAB201F19227700667231 /* Info.plist in Resources */,
+				59CEAB231F19236600667231 /* InfoPlist.strings in Resources */,
 				59DA531D1F0AA3E5006F7CAD /* Assets.xcassets in Resources */,
+				59CEAB151F19175F00667231 /* Localizable.strings in Resources */,
 				59CEAB051F190B0100667231 /* LoadingCell.xib in Resources */,
 				59CEAB101F19122700667231 /* SearchResultCell.xib in Resources */,
 				59CEAB001F19066800667231 /* NothingFoundCell.xib in Resources */,
@@ -235,6 +249,26 @@
 				59CEAB111F19122700667231 /* Base */,
 			);
 			name = SearchResultCell.xib;
+			sourceTree = "<group>";
+		};
+		59CEAB131F19175F00667231 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				59CEAB141F19175F00667231 /* en */,
+				59CEAB161F19186100667231 /* nl */,
+				59CEAB171F19186200667231 /* uk */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		59CEAB251F19236600667231 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				59CEAB241F19236600667231 /* Base */,
+				59CEAB261F19236800667231 /* nl */,
+				59CEAB271F19236900667231 /* uk */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		59DA53191F0AA3E5006F7CAD /* Main.storyboard */ = {

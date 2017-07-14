@@ -26,10 +26,10 @@
 "wde-H8-Aj2.segmentTitles[1]" = "Музика";
 
 /* Class = "UISegmentedControl"; wde-H8-Aj2.segmentTitles[2] = "Software"; ObjectID = "wde-H8-Aj2"; */
-"wde-H8-Aj2.segmentTitles[2]" = "Программи";
+"wde-H8-Aj2.segmentTitles[2]" = "Софт";
 
 /* Class = "UISegmentedControl"; wde-H8-Aj2.segmentTitles[3] = "E-books"; ObjectID = "wde-H8-Aj2"; */
 "wde-H8-Aj2.segmentTitles[3]" = "Книжки";
 
 /* Class = "UISearchBar"; placeholder = "App Name, Artist, Song, Album, E-book"; ObjectID = "zVy-EL-wnq"; */
-"zVy-EL-wnq.placeholder" = "Программа, Артист, Пісня, Альбом, Книжка";
+"zVy-EL-wnq.placeholder" = "Софт, Артист, Пісня, Альбом, Книжка";
