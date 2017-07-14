@@ -116,7 +116,9 @@ extension SearchViewController: UITableViewDataSource {
         
         switch search.state {
         case .nonSearchedYet:
-            fatalError("Should never get here") //because if .nonSearchedYet was in numbersOfRowInSections, that's mean it have return 0 and this must never been called; otherwise, if there a bug controller may call cellForRow in this state
+            return tableView.dequeueReusableCell(withIdentifier: TableViewCellIdentifiers.nothingFoundCell, for: indexPath)
+            //fatalError("Should never get here") //because if .nonSearchedYet was in numbersOfRowInSections, that's mean it have return 0 and this must never been called; otherwise, if there a bug controller may call cellForRow in this state
+            //there are some bug in preloading data, when tableView load 1 row for .nonSearchedYet after first reload data
             
         case .loading:
             let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCellIdentifiers.loadingCell, for: indexPath)
