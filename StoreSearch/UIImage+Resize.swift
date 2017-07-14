@@ -14,7 +14,7 @@ extension UIImage {
         let verticalRatio = bounds.height/size.height
         let minSize = min(size.width, size.height)
         let ratio = max(horizontalRatio, verticalRatio)
-        let newSize = CGSize(width: minSize*ratio, height: minSize*ratio)
+        _ = CGSize(width: minSize*ratio, height: minSize*ratio)
         let uncropedImageSize = CGSize(width: size.width*horizontalRatio, height: size.height*verticalRatio)
         
         
