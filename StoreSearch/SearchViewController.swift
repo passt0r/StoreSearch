@@ -75,7 +75,7 @@ class SearchViewController: UIViewController {
         tableView.register(cellNib, forCellReuseIdentifier: TableViewCellIdentifiers.loadingCell)
         
         tableView.estimatedRowHeight = 80
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = 80
         addFontChangeObserver()
         
         searchBar.becomeFirstResponder()
@@ -109,6 +109,14 @@ extension SearchViewController: UITableViewDataSource {
             return 1
         case .results(let list):
             return list.count
+        }
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch search.state {
+        case .nonSearchedYet, .loading, .noResult:
+            return 80
+        case .results:
+            return UITableViewAutomaticDimension
         }
     }
     
