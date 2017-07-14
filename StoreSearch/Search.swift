@@ -6,7 +6,7 @@
 //  Copyright © 2017 Dmytro Pasinchuk. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 typealias SearchComplete = (Bool) -> Void
 
@@ -37,41 +37,43 @@ class Search {
     }
     
     private var dataTask: URLSessionDataTask? = nil
+    
     func performSearch(for text: String, category: Category, completition: @escaping SearchComplete) {
         if !text.isEmpty {
             dataTask?.cancel()
         }
-        
-           state = .loading
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        state = .loading
             
-            let url = iTunesURL(searchText: text, category: category)
+        let url = iTunesURL(searchText: text, category: category)
             
-            let session = URLSession.shared
-            dataTask = session.dataTask(with: url) {data, response, error in
-                self.state = .nonSearchedYet
-                var success = false
-                if let error = error as? NSError, error.code == -999 {
-                    return
-                }
-                if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
-                    if let jsonData = data, let jsonDictionary = self.parse(json: jsonData) {
+        let session = URLSession.shared
+        dataTask = session.dataTask(with: url) {data, response, error in
+            self.state = .nonSearchedYet
+            var success = false
+            if let error = error as? NSError, error.code == -999 {
+                return
+            }
+            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
+                if let jsonData = data, let jsonDictionary = self.parse(json: jsonData) {
                         
-                        var searchResults = self.parse(dictionary: jsonDictionary)
-                        if searchResults.isEmpty {
-                            self.state = .noResult
-                        } else {
-                            searchResults.sort(by: <)
-                            self.state = .results(searchResults)
-                        }
-                        success = true
+                    var searchResults = self.parse(dictionary: jsonDictionary)
+                    if searchResults.isEmpty {
+                        self.state = .noResult
+                    } else {
+                        searchResults.sort(by: <)
+                        self.state = .results(searchResults)
                     }
-                }
-                DispatchQueue.main.async {
-                    completition(success)
+                    success = true
                 }
             }
-            dataTask?.resume()
+            DispatchQueue.main.async {
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                completition(success)
+            }
         }
+        dataTask?.resume()
+    }
     
     private func iTunesURL(searchText: String, category: Category) -> URL {
         

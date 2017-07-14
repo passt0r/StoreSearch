@@ -63,8 +63,10 @@ class LandscapeViewController: UIViewController {
         var row = 0
         var column = 0
         var x = marginX
-        for(_, searchResult) in searchResults.enumerated() {
+        for(index, searchResult) in searchResults.enumerated() {
             let button = UIButton(type: .custom)
+            button.tag = 2000+index
+            button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
             button.setBackgroundImage(UIImage(named: "LandscapeButton"), for: .normal)
             downloadImage(for: searchResult, andPlaceOn: button)
             
@@ -112,12 +114,60 @@ class LandscapeViewController: UIViewController {
         }
     }
     
+    func buttonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "ShowDetail", sender: sender)
+    }
+    
+    func showSpinner() {
+        let spinner = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        spinner.center = CGPoint(x: scrollView.bounds.midX + 0.5,
+                                 y: scrollView.bounds.midY + 0.5) //add 0.5 to the center point to avoid blurring corners of the spinner at fractional coordinates
+        spinner.tag = 1000
+        view.addSubview(spinner)
+        spinner.startAnimating()
+    }
+    
+    func searchResultsReceived() {
+        hideSpinner()
+        
+        switch search.state {
+        case .nonSearchedYet, .loading:
+            break
+        case .noResult:
+            showNothingFoundLabel()
+        case .results(let list):
+            tileButtons(list)
+        }
+    }
+    
+    private func hideSpinner() {
+        view.viewWithTag(1000)?.removeFromSuperview()
+    }
+    
+    private func showNothingFoundLabel() {
+        let label = UILabel(frame: CGRect.zero)
+        label.text = "Nothing Found"
+        label.textColor = UIColor.white
+        label.backgroundColor = UIColor.clear
+        
+        label.sizeToFit()
+        
+        var rect = label.frame
+        rect.size.width = ceil(rect.size.width/2)*2 //make even
+        rect.size.height = ceil(rect.size.height/2)*2 //make even
+        label.frame = rect
+        
+        label.center = CGPoint(x: scrollView.bounds.midX,
+                               y: scrollView.bounds.midY)
+        view.addSubview(label)
+    }
+    
     deinit {
         for downloadTask in downloadTasks {
             downloadTask.cancel()
         }
         downloadTasks.removeAll()
-        print("***Deinit\(self)")
+        //print("***Deinit\(self)")
     }
 
     override func viewDidLoad() {
@@ -153,10 +203,10 @@ class LandscapeViewController: UIViewController {
                 break
                 
             case .loading:
-                break
+                showSpinner()
                 
             case .noResult:
-                break
+                showNothingFoundLabel()
                 
             case .results(let list):
                 tileButtons(list)
@@ -170,15 +220,20 @@ class LandscapeViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "ShowDetail" {
+            if case .results(let list) = search.state {
+                let destination = segue.destination as! DetailViewController
+                let searchResult = list[(sender as! UIButton).tag - 2000]
+                destination.searchResult = searchResult
+            }
+        }
     }
-    */
+    
 
 }
 
