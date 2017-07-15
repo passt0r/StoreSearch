@@ -25,6 +25,7 @@ class DetailViewController: UIViewController {
             }
         }
     }
+    var firstTime = true
     
     var downloadTask: URLSessionDownloadTask?
     
@@ -75,6 +76,22 @@ class DetailViewController: UIViewController {
             downloadTask = artworkImageView.loadImage(url: largeURL)
         }
         popupView.isHidden = false
+        if firstTime && UIDevice.current.userInterfaceIdiom == .pad {
+            popupView.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+            UIView.animateKeyframes(withDuration: 0.4, delay: 0, options: [.calculationModeCubic], animations: {
+                UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.333, animations: {
+                    self.popupView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+                })
+                UIView.addKeyframe(withRelativeStartTime: 0.334, relativeDuration: 0.333, animations: {
+                    self.popupView.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+                })
+                UIView.addKeyframe(withRelativeStartTime: 0.667, relativeDuration: 0.333, animations: {
+                    self.popupView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                })
+            }, completion: nil)
+        }
+        firstTime = false
+        
     }
     
     deinit {
