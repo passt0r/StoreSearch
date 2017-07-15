@@ -18,10 +18,19 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var genreLabel: UILabel!
     @IBOutlet weak var priceButton: UIButton!
     
-    var searchResult: SearchResult!
+    var searchResult: SearchResult! {
+        didSet {
+            if isViewLoaded {
+                updateUI()
+            }
+        }
+    }
+    
     var downloadTask: URLSessionDownloadTask?
     
     var dismissAnimationStyle = AnimationStyle.fade
+    
+    var isPopup = false
     
     enum AnimationStyle {
         case slide
@@ -65,6 +74,7 @@ class DetailViewController: UIViewController {
         if let largeURL = URL(string: searchResult.artworkLargeURL) {
             downloadTask = artworkImageView.loadImage(url: largeURL)
         }
+        popupView.isHidden = false
     }
     
     deinit {
@@ -75,19 +85,27 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.clear
+        if isPopup {
+            let gestueRecognizer = UITapGestureRecognizer(target: self, action: #selector(close))
+            gestueRecognizer.cancelsTouchesInView = false
+            gestueRecognizer.delegate = self
+            view.addGestureRecognizer(gestueRecognizer)
+            view.backgroundColor = UIColor.clear
+        } else {
+            if let displayName = Bundle.main.localizedInfoDictionary?["CFBundleDisplayName"] as? String {
+                title = displayName
+            }
+            view.backgroundColor = UIColor(patternImage: UIImage(named: "LandscapeBackground")!)
+            popupView.isHidden = true
+        }
         view.tintColor = UIColor(red: 20/255, green: 160/255, blue: 160/255, alpha: 1)
         popupView.layer.cornerRadius = 10
-        
-        let gestueRecognizer = UITapGestureRecognizer(target: self, action: #selector(close))
-        gestueRecognizer.cancelsTouchesInView = false
-        gestueRecognizer.delegate = self
-        view.addGestureRecognizer(gestueRecognizer)
         
         if let _ = searchResult {
             updateUI()
         }
-        // Do any additional setup after loading the view.
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

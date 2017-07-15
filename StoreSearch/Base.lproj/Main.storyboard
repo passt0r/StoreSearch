@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_0" orientation="landscape">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jcJ-i2-ALZ">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -9,6 +9,35 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="csh-vi-nJz">
+            <objects>
+                <navigationController id="QMW-QG-r0Z" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XCI-88-iJM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="xb0-6L-nXn" kind="relationship" relationship="rootViewController" id="ua3-CF-uhX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L2a-M3-4KR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="34" y="-520"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="Wwa-4o-TnG">
+            <objects>
+                <splitViewController id="jcJ-i2-ALZ" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="masterViewController" id="e3b-YL-lhf"/>
+                        <segue destination="QMW-QG-r0Z" kind="relationship" relationship="detailViewController" id="xrY-l3-rm0"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FjB-vn-ydQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-823" y="-519"/>
+        </scene>
         <!--Search View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -18,11 +47,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tFW-4g-x7a">
-                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="BmJ-ge-rxl"/>
@@ -30,12 +59,12 @@
                                 </connections>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hc2-eV-gCj">
-                                <rect key="frame" x="0.0" y="64" width="568" height="44"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                                 <items>
                                     <navigationItem id="4gK-fs-0zR">
                                         <nil key="title"/>
                                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="wde-H8-Aj2">
-                                            <rect key="frame" x="134" y="7.5" width="300" height="29"/>
+                                            <rect key="frame" x="10" y="7.5" width="300" height="29"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <segments>
                                                 <segment title="All"/>
@@ -51,7 +80,7 @@
                                 </items>
                             </navigationBar>
                             <searchBar contentMode="redraw" placeholder="App Name, Artist, Song, Album, E-book" translatesAutoresizingMaskIntoConstraints="NO" id="zVy-EL-wnq">
-                                <rect key="frame" x="0.0" y="20" width="568" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="fac-Ca-PPw"/>
@@ -81,7 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131" y="-283"/>
+            <point key="canvasLocation" x="-823" y="209"/>
         </scene>
         <!--Landscape View Controller-->
         <scene sceneID="F1k-wi-g7Q">
@@ -92,7 +121,7 @@
                         <viewControllerLayoutGuide type="bottom" id="xTA-79-H6F"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zvf-Vq-VgT">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Daq-Vj-CX6">
@@ -120,7 +149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dph-5v-SSe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="454"/>
+            <point key="canvasLocation" x="34" y="746"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="Vnf-Kz-Jlu">
@@ -131,11 +160,11 @@
                         <viewControllerLayoutGuide type="bottom" id="STy-Pf-8Za"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ff1-9Q-NhS">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RFQ-yb-CwM" userLabel="Pop-up View">
-                                <rect key="frame" x="164" y="39" width="240" height="242"/>
+                                <rect key="frame" x="40" y="163" width="240" height="242"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qFY-ea-2KH">
                                         <rect key="frame" x="70" y="9" width="100" height="100"/>
@@ -234,6 +263,7 @@
                             <constraint firstItem="RFQ-yb-CwM" firstAttribute="centerY" secondItem="Ff1-9Q-NhS" secondAttribute="centerY" id="hkT-qL-RW6"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Wgu-JK-UPf"/>
                     <connections>
                         <outlet property="artistNameLabel" destination="UhL-Z3-UbU" id="4Tz-Um-rQC"/>
                         <outlet property="artworkImageView" destination="qFY-ea-2KH" id="6bS-vi-2pj"/>
@@ -246,7 +276,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UA5-CU-hF0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="924.375" y="136.26760563380282"/>
+            <point key="canvasLocation" x="840" y="208"/>
         </scene>
     </scenes>
     <resources>
@@ -254,6 +284,6 @@
         <image name="PriceButton" width="10" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="S1G-0n-4UK"/>
+        <segue reference="ua3-CF-uhX"/>
     </inferredMetricsTieBreakers>
 </document>

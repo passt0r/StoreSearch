@@ -11,6 +11,24 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
+    var window: UIWindow?
+    
+    var splitViewController: UISplitViewController {
+        return window?.rootViewController as! UISplitViewController
+    }
+    
+    var searchViewController: SearchViewController {
+        return splitViewController.viewControllers.first as! SearchViewController
+    }
+    
+    var detailNavController: UINavigationController {
+        return splitViewController.viewControllers.last as! UINavigationController
+    }
+    
+    var detailViewController: DetailViewController {
+        return detailNavController.topViewController as! DetailViewController
+    }
+    
     func customizeAppearance() {
         let tintBarColor = UIColor(red: 20/255, green: 160/255, blue: 160/255, alpha: 1)
         UISearchBar.appearance().barTintColor = tintBarColor
@@ -18,12 +36,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.tintColor = UIColor(red: 10/255, green: 80/255, blue: 80/255, alpha: 1)
     }
 
-    var window: UIWindow?
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         customizeAppearance()
-        
+        detailViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
+        searchViewController.splitViewDetail = detailViewController
         return true
     }
 
