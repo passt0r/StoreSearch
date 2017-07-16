@@ -25,10 +25,10 @@
             </objects>
             <point key="canvasLocation" x="34" y="-520"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Menu View Controller-->
         <scene sceneID="YIA-0I-c7a">
             <objects>
-                <tableViewController id="URk-zi-Wfj" sceneMemberID="viewController">
+                <tableViewController id="URk-zi-Wfj" customClass="MenuViewController" customModule="StoreSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Jgh-7q-7bQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -240,7 +240,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RFQ-yb-CwM" userLabel="Pop-up View">
-                                <rect key="frame" x="40" y="164" width="240" height="240.5"/>
+                                <rect key="frame" x="40" y="163.5" width="240" height="241"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qFY-ea-2KH">
                                         <rect key="frame" x="70" y="9" width="100" height="100"/>
@@ -262,7 +262,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BQh-It-cLQ">
-                                        <rect key="frame" x="10" y="117" width="47" height="20.5"/>
+                                        <rect key="frame" x="10" y="117" width="47" height="21"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -271,7 +271,7 @@
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UhL-Z3-UbU">
-                                        <rect key="frame" x="10" y="141.5" width="81.5" height="18"/>
+                                        <rect key="frame" x="10" y="142" width="81.5" height="18"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -280,7 +280,7 @@
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPx-zZ-DLM">
-                                        <rect key="frame" x="10" y="167.5" width="31.5" height="14.5"/>
+                                        <rect key="frame" x="10" y="168" width="31.5" height="14"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                         <color key="textColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -289,7 +289,7 @@
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kind Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rie-X3-znb">
-                                        <rect key="frame" x="61.5" y="167.5" width="60" height="14.5"/>
+                                        <rect key="frame" x="61.5" y="168" width="60" height="14"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -298,7 +298,7 @@
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2W-1M-ri7">
-                                        <rect key="frame" x="61.5" y="186" width="68.5" height="14.5"/>
+                                        <rect key="frame" x="61.5" y="186" width="68.5" height="15"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -307,7 +307,7 @@
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67K-iw-wvp">
-                                        <rect key="frame" x="10" y="186" width="38" height="14.5"/>
+                                        <rect key="frame" x="10" y="186" width="38" height="15"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                         <color key="textColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -316,7 +316,7 @@
                                         </variation>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDF-HP-LEH">
-                                        <rect key="frame" x="165" y="210.5" width="69" height="24"/>
+                                        <rect key="frame" x="165" y="211" width="69" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="yU2-R2-yHB"/>
                                         </constraints>
@@ -379,6 +379,11 @@
                                         <variation key="heightClass=regular-widthClass=regular" constant="20"/>
                                     </constraint>
                                 </constraints>
+                                <variation key="heightClass=compact-widthClass=regular">
+                                    <mask key="subviews">
+                                        <exclude reference="dHR-oR-eB8"/>
+                                    </mask>
+                                </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="subviews">
                                         <exclude reference="dHR-oR-eB8"/>
@@ -389,13 +394,15 @@
                         <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="RFQ-yb-CwM" firstAttribute="centerX" secondItem="Ff1-9Q-NhS" secondAttribute="centerX" id="dQL-vQ-XdI"/>
-                            <constraint firstItem="RFQ-yb-CwM" firstAttribute="centerY" secondItem="Ff1-9Q-NhS" secondAttribute="centerY" id="hkT-qL-RW6"/>
+                            <constraint firstItem="RFQ-yb-CwM" firstAttribute="centerY" secondItem="Ff1-9Q-NhS" secondAttribute="centerY" id="hkT-qL-RW6">
+                                <variation key="heightClass=compact-widthClass=regular" constant="20"/>
+                            </constraint>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Wgu-JK-UPf">
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="bYd-bl-hgU">
                             <connections>
-                                <segue destination="URk-zi-Wfj" kind="popoverPresentation" identifier="showMenu" popoverAnchorBarButtonItem="bYd-bl-hgU" id="bXt-qi-MuI">
+                                <segue destination="URk-zi-Wfj" kind="popoverPresentation" identifier="ShowMenu" popoverAnchorBarButtonItem="bYd-bl-hgU" id="bXt-qi-MuI">
                                     <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                 </segue>
                             </connections>

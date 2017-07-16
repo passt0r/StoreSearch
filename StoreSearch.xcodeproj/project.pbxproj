@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5905477A1F1BE4000094E534 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590547791F1BE4000094E534 /* MenuViewController.swift */; };
 		596AE04E1F18079B0047CC92 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596AE04D1F18079B0047CC92 /* UIImage+Resize.swift */; };
 		596AE0501F1809DC0047CC92 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596AE04F1F1809DC0047CC92 /* Search.swift */; };
 		596EF5E01F17B9A30096D96E /* LandscapeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596EF5DF1F17B9A30096D96E /* LandscapeViewController.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		590547791F1BE4000094E534 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		596AE04D1F18079B0047CC92 /* UIImage+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
 		596AE04F1F1809DC0047CC92 /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		596EF5DF1F17B9A30096D96E /* LandscapeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandscapeViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				597576771F1575E600B12709 /* SlideOutAnimationController.swift */,
 				5975C9701F0E58DC0006B5F9 /* DimmingPresentationController.swift */,
 				5975C96E1F0E535A0006B5F9 /* DetailViewController.swift */,
+				590547791F1BE4000094E534 /* MenuViewController.swift */,
 				596EF5E11F17CF310096D96E /* FadeOutAnimationController.swift */,
 				596EF5DF1F17B9A30096D96E /* LandscapeViewController.swift */,
 				596AE04F1F1809DC0047CC92 /* Search.swift */,
@@ -204,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59DA53181F0AA3E5006F7CAD /* SearchViewController.swift in Sources */,
+				5905477A1F1BE4000094E534 /* MenuViewController.swift in Sources */,
 				5975C9711F0E58DC0006B5F9 /* DimmingPresentationController.swift in Sources */,
 				596EF5E21F17CF310096D96E /* FadeOutAnimationController.swift in Sources */,
 				599F37E51F0AB987000D2605 /* SearchResult.swift in Sources */,
